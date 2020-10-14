@@ -1,0 +1,65 @@
+-Git flow
+work->add->commit->push
+
+-get other developer changes
+pull
+
+-get complete project which is already in git then we create 
+clone 
+
+git help ----get the list of all commands
+
+in mac only
+congif setting
+git config --global user.name "malkeet singh"
+git config --global user.email "malkeetvisionvivante@gmail.com
+git config --list
+
+initilize git
+git init projrctname
+
+
+git status
+git add   -----------add file in git index or git tracing area
+git commit
+git commit -a               ------------for both add and commit 
+
+
+git add .          -------for all
+
+git reset filename ----------if we commit by mistake . then we reset it by mistake and if by chance we get back data in file also then we use
+git chekout -- filename
+
+
+
+
+
+git log -------------for get git commit history
+
+git rm filename
+
+some time we delete file with git knowledge like
+rm filename
+
+then we have to add files like
+git add -u
+
+
+ignore file
+.gitignore                              ---------in  file like    *.log
+
+
+
+
+
+git remote add origin ............url......
+git remote -v     ----------list of remote urls 
+git push -u origin master -------------first time push all data
+
+git commit -am "ffsdfsdfsd"  --------for commit changes locally 
+git pull origin master 
+git push origin master
+
+
+
+
