@@ -1,3 +1,7 @@
+malkeet.saini897@gmail.com
+malkeet@123
+
+
 -Git flow
 work->add->commit->push
 
@@ -61,5 +65,18 @@ git pull origin master
 git push origin master
 
 
+
+
+First time
+=====================
+git init
+git status
+git add .
+git config --global user.email "malkeet.saini897@gmail.com"
+git config --global user.name "malkeet"
+git commit -m "first file"
+git remote add origin https://github.com/Malkeetsaini/codetest.git
+git branch -M master
+git push -u origin main
 
 
