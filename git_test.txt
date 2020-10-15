@@ -69,14 +69,20 @@ git push origin master
 
 First time
 =====================
-git init
-git status
-git add .
-git config --global user.email "malkeet.saini897@gmail.com"
+git init         ----------------for initialize github in a project
+git status ---------------for check current status. it show changed and new file status
+git add .      ---------------add all file's for tracing
+git config --global user.email "malkeet.saini897@gmail.com"  ----------------add global congiguration
 git config --global user.name "malkeet"
-git commit -m "first file"
-git remote add origin https://github.com/Malkeetsaini/codetest.git
-git branch -M master
-git push -u origin main
+git commit -m "first time message"            --------------commit change
+git remote add origin https://github.com/Malkeetsaini/codetest.git        ------------connect repository with email password
+git branch -M master                                  -------------------create branch
+git push -u origin master             ------------for push code in maaster branch
 
 
+Second Time
+================
+git add .
+git status
+git commit -am "second time message"
+git push -u origin master
