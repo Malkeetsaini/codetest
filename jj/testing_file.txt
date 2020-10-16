@@ -7,7 +7,11 @@ dsadsad
 
 
 
+<<<<<<< HEAD
 dsadasdsadsa
 
 
 dasdasdsadasd asd
+=======
+dsadasdsads0
+>>>>>>> 275bbf7dc85b2446c14431660f6b55ec5621c0c1
