@@ -1,5 +1,179 @@
-malkeet.saini897@gmail.com
-malkeet@123
+
+Git flow
+work->add->commit->push
+
+===========
+clone  ----------get complete project which is already in git then we create 
+ 
+==========
+git help ----get the list of all commands
+
+config setting
+==============
+git config --global user.name "malkeet singh"
+git config --global user.email "malkeetvisionvivante@gmail.com
+git config --list
+
+============
+initilize git
+git init projrctname
+
+=============
+git status
+
+============
+git log -------------for get git commit history
+git log --oneline         --------------list of all commits and changes
+
+============
+git rm filename
+
+some time we delete file with git knowledge like
+rm filename
+
+then we have to add files like
+git add -u
+
+=====================
+ignore file
+.gitignore                              ---------in  file like    *.log
+
+
+
+
+First time
+=====================
+git init         ----------------for initialize github in a project
+git status ---------------for check current status. it show changed and new file status
+git add .      ---------------add all file's for tracing
+git config --global user.email "malkeet.saini897@gmail.com"  ----------------add global congiguration
+git config --global user.name "malkeet"
+git commit -m "first time message"            --------------commit change
+git remote add origin https://github.com/Malkeetsaini/codetest.git        ------------connect repository with email password
+git branch -M master                                  -------------------create branch
+git push -u origin master             ------------for push code in maaster branch
+
+
+Second Time
+================
+git add .
+git status
+git commit -am "second time message"
+git push -u origin master
+
+
+==============================
+git stash -------------for temprory remove tha changes from current working directory
+git pull
+git stash apply
+
+
+==========
+git checkout -b new-branch-create  --------create new branch
+git checkout develop  ----switch branch
+
+
+
+
+
+rebase process
+======================
+git checkout develop
+git pull
+git checkout my-branch
+git rebase develop
+git push -f     -----if conflict then always push force
+
+
+close commit
+======================
+git commit --allow-empty -m "Closes AR-2145"
+git push
+
+
+=====================
+git diff branch1 branch2
+git diff rerewf32 fewr323  -------------diff between commits
+
+
+merge specific branch
+============
+git checkout main 
+git merge develop        -----------------merge develop branch to main 
+
+
+================
+git show HEAD ------------show current head
+
+
+reset process
+====================
+git reset f538956     ----------reset the specific commit
+git reset --hard f538956     ----------if reset not working
+git reset --hard HEAD~1   -----move to last commit, delete the chenges
+
+git reset --soft HEAD~1 -----move to last commit, but not delete the chenges, kayi bar ham chota-chota changes push kar deta ha to 3-4 k bar reset kar ke ekatha ek push kar sakta ha
+
+change something
+git push -f ------------------for change somthing on github, after changes we have to force push for changes
+
+
+restore process
+===================
+restore file from the specific commit
+git restore --source=5c31f60 config/mail.js -------------restore from commit
+git restore --source=main config/mail.js            --------------restore from branch
+
+
+git restore --source=main '*.js'      -------------restore all files with '.js' extension from main branch
+git restore --source=main .     ------------restore all files from main branch
+
+
+difference between restore & reset
+====================================
+The main difference between the two commands is that git restore is used for restoring files in the working tree from the index or another commit. This doesn't update the branch. Whereas, the git reset is used to update your brand.
+
+
+need to learn
+===============
+git revert
+git revert does this by creating a new commit that undoes the changes in the specified commit and so does not change the history.
+
+
+fetch vs pull
+===============
+Git Fetch is the command that tells the local repository that there are changes available in the remote repository without bringing the changes into the local repository
+
+pull ---- in this case we get changes from remote and directally merge that changes to local
+fetch ---- in this case we get chnages from remote to local-git-log but these changes are not directally merge with local working directory
+
+
+for fetch we need to follow flow like
+------
+git fetch 
+git status
+git merge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
 
 -Git flow
