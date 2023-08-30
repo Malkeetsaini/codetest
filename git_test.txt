@@ -114,6 +114,8 @@ git reset --hard HEAD~1   -----move to last commit, delete the chenges
 
 git reset --soft HEAD~1 -----move to last commit, but not delete the chenges, kayi bar ham chota-chota changes push kar deta ha to 3-4 k bar reset kar ke ekatha ek push kar sakta ha
 
+after reset we also need to do commit and push if not change then force push
+
 change something
 git push -f ------------------for change somthing on github, after changes we have to force push for changes
 
