@@ -1,0 +1,16 @@
+#!/bin/sh
+
+current_branch="$(git branch --show-current)"
+
+printf "\n\n**** Move To Develop ****\n" &&
+git checkout develop &&
+printf "\n\n**** Git start Pull In Develop ****\n" &&
+git pull &&
+printf "\n\n**** Pull Done \n Move To $current_branch **** \n" &&
+git checkout $current_branch &&
+printf "\n\n**** Rebase Start ****\n" &&
+git rebase develop &&
+printf "\n\n**** Rebase Done ****\n **** Force Push Start **** \n" &&
+git push -f &&
+printf "\n\n\n\n**** Rebase Done ****\n"
+

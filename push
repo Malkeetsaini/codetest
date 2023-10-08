@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+then
+	message="$(git branch --show-current) -- $(date)" 
+else 
+	message="$1 -- $(date)" 
+fi	
+
+git add . && 
+git commit -m "$message" && 
+git push &&
+printf "\n\n\n\n**** Push Done ****\n\n\n\n"
