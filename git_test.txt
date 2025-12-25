@@ -178,87 +178,94 @@ git merge
 ===========================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
 
--Git flow
-work->add->commit->push
 
--get other developer changes
-pull
+Branch 
+===========
+git branch --list                 ---------------------------list all local branches
+git branch --all                 ---------------------------list all local and remote branches
+git branch secondmain            ------------create new branch
+git switch secondmain               ---------------for swich branch
 
--get complete project which is already in git then we create 
-clone 
+git branch -a ------------list all local and remote branches
+git branch mynewnrach -------------create new branch
+git checkout mynewbrach ---------------for switch current branch to any other branch
+git checkout -b mynewbrach ---------------for creata and switch current branch to any other branch in one time
+git branch -m mynewbrach newbranchname    ---------------for rename the branch. here m means "move"
+git branch -d newbranchname    ---------------for delete any specific branch
 
-git help ----get the list of all commands
-
-in mac only
-congif setting
-git config --global user.name "malkeet singh"
-git config --global user.email "malkeetvisionvivante@gmail.com
-git config --list
-
-initilize git
-git init projrctname
-
-
-git status
-git add   -----------add file in git index or git tracing area
-git commit
-git commit -a               ------------for both add and commit 
+merge two branches
+git merge nameOfTheBranch        -----------this command merge any specific branch like "nameOfTheBranch" with current branch
+git merge nameOfTheBranch -m "message"  --it automatically merge to brances 
 
 
-git add .          -------for all
-
-git reset filename ----------if we commit by mistake . then we reset it by mistake and if by chance we get back data in file also then we use
-git chekout -- filename
-
-
-
-
-
-git log -------------for get git commit history
-
-git rm filename
-
-some time we delete file with git knowledge like
-rm filename
-
-then we have to add files like
-git add -u
+Add
+========
+git add .  ------------create index for all directory
+git add aa/bb/cc.txt  ------------create index for specific file
+git add aa/bb/cc.txt -f  ------------create index for specific file forcefully
+git add aa/bb/cc.txt -u  ------------update index for specific file. not add any other file.
+git add aa/bb/cc.txt --ignore-missing   like we add a file. and next time we change it directory then it showing file missing error which we ignore like this
 
 
-ignore file
-.gitignore                              ---------in  file like    *.log
+Restore
+===========
+git restore .          --------------return all changes before add and commit
+git restore --source master   ------return changes before commit
 
 
+Diff 
+============
+git diff main master     ---------------get the difference by two branches
+git diff 02b851174a8849e563d5cc96f24ae66c1af1e0c9 6c438546b1bf88f3b78c31db34dc6a7723310561   ---get diff b/w two commits
+git diff a/test.txt b/tezt.txt     ---------------get the difference by two files
+git diff a/test.txt b/tezt.txt  --ignore-space-at-eol   ---------------ignore spaces at the end of the line
+git diff a/test.txt b/tezt.txt  --ignore-space-change   ---------------ignore spaces changes
+git diff a/test.txt b/tezt.txt  --ignore-all-space   ---------------ignore all spaces 
+git diff a/test.txt b/tezt.txt  --ignore-blank-lines   ---------------ignore blank lines
 
 
+Stash
+=======
+git stash  ---------------create a backup of last changes and return back to last commit changes
+git stash apply ----------------again apply last stash changes which we done last time
+git stash list ----------showing all backups
+git stash drop --------------delete last stash backups
+git stash clear --------------delete all stash backups
 
-git remote add origin ............url......
-git remote -v     ----------list of remote urls 
-git push -u origin master -------------first time push all data
-
-git commit -am "ffsdfsdfsd"  --------for commit changes locally 
-git pull origin master 
-git push origin master
-
-
-
-
-First time
-=====================
-git init         ----------------for initialize github in a project
-git status ---------------for check current status. it show changed and new file status
-git add .      ---------------add all file's for tracing
-git config --global user.email "malkeet.saini897@gmail.com"  ----------------add global congiguration
-git config --global user.name "malkeet"
-git commit -m "first time message"            --------------commit change
-git remote add origin https://github.com/Malkeetsaini/codetest.git        ------------connect repository with email password
-git branch -M master                                  -------------------create branch
-git push -u origin master             ------------for push code in maaster branch
+git stash only backup that files which are already added or tracked file. it not create backup the newly created files.
+git stash -u           -----------------also backup newly created file
+git stash pop        ---------------apply and delete stash backup in one line.
 
 
-Second Time
-================
-git add .
-git status
-git commit -am "second time message"
-git push -u origin master
+git stash save "with any message"
+git stash show stashName@{1}  ----------------show changes of any specific stash with it complete name with index
+git stash apply stashName@{1}     ----------------apply any specific stash
+git stash drop stashName@{1}     ----------------drop any specific stash
+git stash branch branchName         ---------------apply the stash changes to any specific branch. like currently we are in master branch and we stash our code after some changes but we not want to apply that changes to current bransh . then with the help of "git stash branch branchName" command we apply changes to any other branch
+
+
+Tag
+========
+Tag is just a alavel who point to a commit. means it refer to a commit or like a commit name.
+Two types of tags:-
+-simple tag
+-annotated tag
+
+-git tag mytag         ----------------------it create a tag with "mytag" name. means it create a tag of last commit. it creae the simple tag
+-git tag --list          -----------------show the list of tags
+-git tag --delete mytag      ----------------delete to a perticular tag
+-git show mytag  ----------------it show tha tag commit discription
+
+-git tag -a v.10 -------------- it create a annotated tag. when we enter this command with "-a" then we also have to add discription of the tag. which is not in simple tag.
+
+-git diff v.10 v.11         ---------------get differnece b/w two tags
+-git tag -a v.09 443f342f32            --------------------to give tag to any commit. this rendom number is thr unique commit number
+
+update tag
+-----------------first delete the tag and again assign tag to any specific commit.
+
+
+-git push origin v.10    -----------------for push any specific tag commit. on git hub we check this in release section. 
+-git push origin master --tags   -----------update all tages on github
+-git oush origin :v.10  -------------for delete tag on remote repo
+
